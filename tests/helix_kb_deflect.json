@@ -1,0 +1,16 @@
+{
+  "name": "KB Deflection Test - VPN Connection",
+  "description": "User asks about VPN connection. Agent should search KB and provide solution WITHOUT creating a ticket.",
+  "input": "How do I connect to VPN?",
+  "expected_behavior": {
+    "must_call_tools": ["search_knowledge_base"],
+    "must_not_call_tools": ["create_ticket"],
+    "response_must_contain": ["VPN", "connect", "steps"]
+  },
+  "success_criteria": [
+    "Agent calls search_knowledge_base",
+    "Agent does NOT call create_ticket",
+    "Response contains VPN connection steps",
+    "Response is helpful and conversational"
+  ]
+}

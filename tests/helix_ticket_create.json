@@ -1,0 +1,22 @@
+{
+  "name": "Urgent Ticket Creation Test - Dead Laptop",
+  "description": "User reports urgent hardware issue. Agent should search KB first (low confidence), then create HIGH priority ticket.",
+  "input": "My laptop is completely dead, I can't work, this is urgent",
+  "expected_behavior": {
+    "must_call_tools": ["search_knowledge_base", "create_ticket"],
+    "tool_call_order": ["search_knowledge_base", "create_ticket"],
+    "create_ticket_params": {
+      "priority": "HIGH",
+      "category": "Hardware"
+    },
+    "response_must_contain": ["ticket", "TKT-", "high priority"]
+  },
+  "success_criteria": [
+    "Agent calls search_knowledge_base first",
+    "Agent recognizes KB can't help (low confidence or no match)",
+    "Agent calls create_ticket with priority=HIGH",
+    "Agent calls create_ticket with category=Hardware",
+    "Response confirms ticket creation with ticket ID",
+    "Response acknowledges urgency"
+  ]
+}

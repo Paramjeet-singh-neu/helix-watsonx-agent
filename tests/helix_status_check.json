@@ -1,0 +1,18 @@
+{
+  "name": "Ticket Status Check Test - List User Tickets",
+  "description": "User asks about their open tickets. Agent should call list_my_tickets with user's email.",
+  "input": "What's the status of my open tickets? My email is alice@company.com",
+  "expected_behavior": {
+    "must_call_tools": ["list_my_tickets"],
+    "list_my_tickets_params": {
+      "user_email": "alice@company.com"
+    },
+    "response_must_contain": ["ticket", "open", "status"]
+  },
+  "success_criteria": [
+    "Agent calls list_my_tickets",
+    "Agent uses the correct email (alice@company.com)",
+    "Response provides ticket status information",
+    "Response is conversational and helpful"
+  ]
+}
