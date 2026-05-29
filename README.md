@@ -118,7 +118,7 @@ Helix includes solutions for 10 common IT issues:
 - Monitor Not Detected
 - Wi-Fi Keeps Disconnecting
 
-## 🏆 Hackathon Ready
+##Agent
 
 This agent demonstrates:
 - ✅ Intelligent behavior (not just form-filling)
